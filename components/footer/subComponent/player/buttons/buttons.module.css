@@ -1,0 +1,39 @@
+.boutons {
+  width: 22%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  min-width: 150px;
+}
+
+/* Main */
+.iconMain {
+  fill: #000000;
+  width: 34px;
+  padding: 4px;
+  
+}
+.buttonMain {
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  opacity: 0.85;
+  transition: 0.2s;
+}
+.buttonMain:hover {
+  opacity: 1;
+}
+
+/* Secondary */
+.iconSecondary {
+  fill: #fff;
+  width: 24px;
+  padding: 4px;
+  opacity: 0.8;
+  transition: 0.2s;
+}
+.iconSecondary:hover {
+  opacity: 1;
+}

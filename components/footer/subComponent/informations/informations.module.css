@@ -1,0 +1,30 @@
+.infos {
+  min-width: 180px;
+  padding-inline-start: 8px;
+  display: flex;
+  flex-direction: row;
+  width: 30%;
+  align-items: center;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+  font-family: helvetica, arial, Hiragino Kaku Gothic Pro, Meiryo, MS Gothic;
+}
+
+.image {
+  width: 56px;
+  height: 56px;
+  isolation: isolate;
+  margin-inline-end: 16px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.name {
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+
+.artistes {
+  font-size: 0.6875rem;
+  color: #b3b3b3;
+}

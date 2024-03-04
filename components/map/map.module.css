@@ -1,0 +1,17 @@
+.mapContainer {
+  width: 100%;
+  height: -moz-calc(100% - 88px); /* Firefox */
+  height: -webkit-calc(100% - 88px); /* Chrome, Safari */
+  height: calc(100% - 88px); /* IE9+ and future browsers */
+  /* FOOTER : 88  */
+}
+
+.borderIcon {
+  border: 6px solid #00ab64a9;
+  border-radius: 50%;
+}
+
+.popUpWrapper {
+    background: #00ff1a;
+    margin-top: -245px;
+}

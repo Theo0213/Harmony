@@ -1,0 +1,76 @@
+.volume {
+  display: flex;
+  justify-content: flex-end;
+  min-width: 180px;
+  width: 30%;
+  align-items: center;
+  
+}
+
+
+.input {
+  -webkit-appearance: none;
+  appearance: none; 
+  width: 93px;
+  min-width: 93px;
+  outline: none;
+  overflow: hidden;
+  height: 15px;
+  background: transparent;
+  border-radius: 16px;
+} 
+
+/***** Chrome, Safari, Opera, and Edge Chromium *****/
+/* Style pour la barre de progression remplie sur Chrome */
+.input::-webkit-slider-runnable-track {
+  height: 4px;
+  background: #4d4d4d;
+  border-radius: 16px;
+}
+.input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none; 
+  height: 0px;
+  width: 0px;
+  margin-top: -3px;
+  border-radius: 50%;
+  box-shadow: -405px 0 0 400px #ffffff;
+}
+.input:hover::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none; 
+  height: 10px;
+  width: 10px;
+  margin-top: -3px;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: -405px 0 0 400px #4caf50;
+}
+
+/******** Firefox ********/
+.input::-moz-range-track {
+  width: 100%;
+  background: #4d4d4d; /* Couleur de la barre de progression, ajustez si nécessaire */
+  border-radius: 5px;
+}
+.input::-moz-range-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 0px; /* Largeur du curseur, ajustez si nécessaire */
+  height: 0px; /* Hauteur du curseur, ajustez si nécessaire */
+}
+.input:hover::-moz-range-thumb {
+  width: 10px; /* Largeur du curseur au survol, ajustez si nécessaire */
+  height: 10px; /* Hauteur du curseur au survol, ajustez si nécessaire */
+  background-color: #ffffff; /* Couleur du curseur au survol, ajustez si nécessaire */
+  border-radius: 50%; /* Pour obtenir une forme de cercle */
+}
+
+.input::-moz-range-progress {
+  height: 4px;  
+  border-radius: 4px;
+  background-color: #ffffff;
+}
+.input:hover::-moz-range-progress {
+  background-color: #4caf50; /* Couleur de la barre de progression, ajustez si nécessaire */
+}

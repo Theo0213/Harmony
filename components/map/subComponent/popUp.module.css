@@ -1,0 +1,63 @@
+/* PopupComponent.css */
+
+.container {
+  border: 5px solid #104e37;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px #000000;
+  padding: 16px;
+  font-family: "Roboto", sans-serif;
+  background-color: rgb(18, 18, 18);
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  margin: 0 0 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #00ab64;
+}
+
+.artistes {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #ffffff;
+}
+
+.bottomContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.image {
+  width: 56px;
+  height: 56px;
+  isolation: isolate;
+  margin-bottom: 6px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.buttonMain {
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #00ab64;
+  opacity: 0.85;
+  transition: 0.2s;
+}
+.buttonMain:hover {
+  opacity: 1;
+}
+
+.connectIcon {
+  fill: #f4f4f4;
+  width: 34px;
+  padding: 4px;
+}
