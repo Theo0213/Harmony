@@ -2,8 +2,6 @@ import style from "./volume.module.css";
 
 const Volume = () => {
 
-  
-
   return (
     <div className={style.volume}>
             <svg className="h-15 w-10 fill-white px-2" viewBox="0 0 448 512">

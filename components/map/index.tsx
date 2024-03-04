@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import { UserPlayerTrack } from "@types";
 import dynamic from "next/dynamic";
-import { selectUsers } from "../../pages/utils";
+import { selectUsers } from "@utils";
 import { useMainStore } from "../../src/store/store";
 import { useSocket } from "@components/providers/socket-provider";
 

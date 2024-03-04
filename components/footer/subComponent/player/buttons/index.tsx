@@ -1,7 +1,7 @@
-import { Player, Track } from "@prisma/client";
 import { next, pause, play, previous } from "../../../../../src/hooks/hooks";
 
 import { Token } from "@types";
+import { Track } from "@prisma/client";
 import style from "./buttons.module.css";
 import { useMainStore } from "../../../../../src/store/store";
 

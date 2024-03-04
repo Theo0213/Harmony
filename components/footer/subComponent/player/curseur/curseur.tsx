@@ -1,9 +1,9 @@
-import { callCurrentTrack, next, seek } from "../../../../../src/hooks/hooks";
-import { useEffect, useState } from "react";
+import { callCurrentTrack, seek } from "../../../../../src/hooks/hooks";
 
 import React from "react";
 import { Token } from "@types";
 import style from "./curseur.module.css";
+import { useEffect } from "react";
 import { useMainStore } from "../../../../../src/store/store";
 
 const Curseur = ({

@@ -10,7 +10,7 @@ import MarkerClusterGroup from "next-leaflet-cluster";
 import PopUpHost from "./subComponent/popUpHost";
 import PopUpUsers from "./subComponent/popUpUsers";
 import style from "./map.module.css";
-import { updateUser } from "../../pages/utils";
+import { updateUser } from "@utils";
 import { useMainStore } from "../../src/store/store";
 
 const saveUser = async (userId, latitude, longitude) => {

@@ -1,4 +1,4 @@
-import { getAccount, selectUser } from "../pages/utils";
+import { getAccount, selectUser } from "@utils";
 import { signIn, useSession } from "next-auth/react";
 
 import { toast } from 'sonner'

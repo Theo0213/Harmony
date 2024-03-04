@@ -1,11 +1,9 @@
-import { Prisma, Track } from "@prisma/client";
-
-import { GetServerSideProps } from "next";
 import Information from "./subComponent/informations";
 import Player from "./subComponent/player";
 import { Token } from "@types";
+import { Track } from "@prisma/client";
 import Volume from "./subComponent/volume";
-import { savePlayer } from "../../pages/utils";
+import { savePlayer } from "@utils";
 import style from "./footer.module.css";
 import { useEffect } from "react";
 import { useMainStore } from "../../src/store/store";
