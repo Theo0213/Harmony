@@ -26,7 +26,7 @@ export const SocketProvider = ({ children }: { children: React.ReactNode }) => {
     // NEXT_PUBLIC_SITE_URL -> local. à change lors du déploiement
 
     const socketInstance = new (ClientIO as any)(
-      process.env.NEXT_PUBLIC_SITE_URL!,
+      process.env.PUBLIC_URL!,
       {
         path: "/api/socket/io",
         addTrailingSlash: false,
