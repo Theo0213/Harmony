@@ -30,8 +30,10 @@ export const SocketProvider = ({ children }: { children: React.ReactNode }) => {
       {
         path: "/api/socket/io",
         addTrailingSlash: false,
+        transport: ['websocket']
       }
     );
+    
     
     socketInstance.on("connect", () => {
       setIsConnected(true);

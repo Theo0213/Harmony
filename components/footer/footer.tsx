@@ -14,8 +14,7 @@ const Footer = ({ track, token }: { track: Track; token: Token }) => {
   const player = useMainStore((state) => state.player);
 
   useEffect(() => {
-    console.log("savePLAYER called");
-
+    
     const upsertPlayer = async () => {
       try {
         if (token?.tokenId && userStore?.id && player)
