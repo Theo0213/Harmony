@@ -31,7 +31,7 @@ export default function Login() {
                     });
                   });
                 } catch (error) {
-                  console.error("Erreur lors du select de l'utilisateur : ", error);
+                  console.error("Erreur lors de la récupération du compte : ", error);
                 }
             };
             getUser(res.userId);            

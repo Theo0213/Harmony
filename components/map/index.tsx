@@ -47,7 +47,7 @@ const Map = () => {
   useEffect(() => {
     const getUsers = async () => {
       try {
-        if (user) {
+        if (user?.id) {
           const userList = await selectUsers(user);
           setUsers(userList);
         }

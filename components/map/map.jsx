@@ -2,7 +2,7 @@ import "leaflet/dist/leaflet.css";
 import "next-leaflet-cluster/lib/assets/MarkerCluster.css";
 import "next-leaflet-cluster/lib/assets/MarkerCluster.Default.css";
 
-import { MapContainer, Marker, Popup, TileLayer, useMap } from "react-leaflet";
+import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import { useEffect, useState } from "react";
 
 import L from "leaflet";
@@ -12,14 +12,6 @@ import PopUpUsers from "./subComponent/popUpUsers";
 import style from "./map.module.css";
 import { updateUser } from "@utils";
 import { useMainStore } from "../../src/store/store";
-
-const saveUser = async (userId, latitude, longitude) => {
-  try {
-    await updateUser(userId, latitude, longitude);
-  } catch (error) {
-    console.error("Erreur lors du select de l'utilisateur : ", error);
-  }
-};
 
 const MapComponent = ({ users }) => {
   const track = useMainStore((state) => state.track);
@@ -33,6 +25,14 @@ const MapComponent = ({ users }) => {
     longitude: user?.longitude ?? 3.0436324484364815,
   });
 
+  const saveUser = async (userId, latitude, longitude) => {
+    try {
+      await updateUser(userId, latitude, longitude);
+    } catch (error) {
+      console.error("Erreur lors de la mise à jour de l'utilisateur : ", error);
+    }
+  };
+
   useEffect(() => {
     if ("geolocation" in navigator) {
       navigator.geolocation.getCurrentPosition((position) => {
@@ -43,7 +43,7 @@ const MapComponent = ({ users }) => {
           latitude: latitude,
           longitude: longitude,
         });
-        if (user?.id) saveUser(user.id, latitude, longitude);
+        if (user?.id && latitude && longitude) saveUser(user.id, latitude, longitude);
       });
     }
   }, []);
