@@ -16,17 +16,21 @@ const ioHandler = (req: NextApiRequest, res: NextApiResponseServerIo) => {
     const io = new ServerIO(httpServer, {
       path: path,
       addTrailingSlash: false,
-      pingTimeout: 60000,
-      transports: ["websocket", "polling"]
+      cors: {
+        origin: process.env.PUBLIC_URL,
+        methods: ["GET", "POST"],
+        credentials: true
+      }
     });
 
+
+    
     io.engine.on("connection_error", (err) => {
       console.log(err.req);      // the request object
       console.log(err.code);     // the error code, for example 1
       console.log(err.message);  // the error message, for example "Session ID unknown"
       console.log(err.context);  // some additional error context
     });
-
 
     res.socket.server.io = io;
     res.end();
