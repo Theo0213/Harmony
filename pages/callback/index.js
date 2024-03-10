@@ -4,12 +4,13 @@ import { Loading } from "../../components/loading/loading";
 
 async function getAccessToken(clientId, code) {
   const verifier = localStorage.getItem("verifier");
+  const publicUrl = process.env.PUBLIC_URL
 
   const params = new URLSearchParams();
   params.append("client_id", clientId);
   params.append("grant_type", "authorization_code");
   params.append("code", code);
-  params.append("redirect_uri", "https://harmony-ebon.vercel.app/callback");
+  params.append("redirect_uri", publicUrl+"/callback");
   params.append("code_verifier", verifier);
 
   const result = await fetch("https://accounts.spotify.com/api/token", {
