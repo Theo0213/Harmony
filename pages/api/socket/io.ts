@@ -1,6 +1,5 @@
-import { NextApiRequest, NextApiResponse } from "next";
-
 import { Server as NetServer } from "http";
+import { NextApiRequest } from "next";
 import { NextApiResponseServerIo } from "@types";
 import { Server as ServerIO } from "socket.io";
 
@@ -17,7 +16,7 @@ const ioHandler = (req: NextApiRequest, res: NextApiResponseServerIo) => {
     const io = new ServerIO(httpServer, {
       path: path,
       addTrailingSlash: false,
-      transports:['websocket'],
+      transports: ["websocket", "polling"]
     });
     res.socket.server.io = io;
     res.end();
