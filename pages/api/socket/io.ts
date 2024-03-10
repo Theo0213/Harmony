@@ -16,6 +16,7 @@ const ioHandler = (req: NextApiRequest, res: NextApiResponseServerIo) => {
     const io = new ServerIO(httpServer, {
       path: path,
       addTrailingSlash: false,
+      pingTimeout: 60000,
       transports: ["websocket", "polling"]
     });
     res.socket.server.io = io;

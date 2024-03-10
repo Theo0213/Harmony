@@ -29,7 +29,7 @@ export const SocketProvider = ({ children }: { children: React.ReactNode }) => {
       process.env.PUBLIC_URL!,
       {
         path: "/api/socket/io",
-        addTrailingSlash: false
+        addTrailingSlash: false,
       }
     );
     
