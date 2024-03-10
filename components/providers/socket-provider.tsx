@@ -30,8 +30,6 @@ export const SocketProvider = ({ children }: { children: React.ReactNode }) => {
       {
         path: "/api/socket/io",
         addTrailingSlash: false,
-        transports: ['websocket', 'polling'],
-        secure: true,
       }
     );
 
