@@ -9,6 +9,8 @@ export const config = {
   },
 };
 
+
+
 const ioHandler = (req: NextApiRequest, res: NextApiResponseServerIo) => {
   if (!res.socket.server.io) {
     const path = "/api/socket/io";
@@ -16,6 +18,10 @@ const ioHandler = (req: NextApiRequest, res: NextApiResponseServerIo) => {
     const io = new ServerIO(httpServer, {
       path: path,
       addTrailingSlash: false,
+      cors: {
+        origin: process.env.PUBLIC_URL,
+        methods: ["GET", "POST"]
+      }
     });
 
 
