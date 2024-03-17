@@ -4,8 +4,7 @@ import { Loading } from "../../components/loading/loading";
 
 async function getAccessToken(clientId, code) {
   const verifier = localStorage.getItem("verifier");
-  // const publicUrl = process.env.PUBLIC_URL
-  const publicUrl = "https://harmony-production-d231.up.railway.app"
+  const publicUrl = process.env.PUBLIC_URL
 
   const params = new URLSearchParams();
   params.append("client_id", clientId);
