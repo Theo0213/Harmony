@@ -57,7 +57,11 @@ export async function getAccount(data: any) {
 
   if (!response.ok) {
     throw new Error(response.statusText);
+  } 
+  else if (response.status===210){
+    throw response;
   }
+  
   return await response.json();
 }
 

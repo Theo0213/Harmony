@@ -37,7 +37,11 @@ export default function Login() {
             getUser(res.userId);            
           });
         } catch (error) {
-          console.error("Erreur lors da récupération du compte : ", error);
+          if (error?.status===210) {
+            handleSignIn();
+          }else {
+            console.error("Erreur lors da récupération du compte : ", error);
+          }
         }
       }
     };

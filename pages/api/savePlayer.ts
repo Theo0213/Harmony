@@ -49,15 +49,11 @@ export default async (req: NextApiRequest, res: NextApiResponseServerIo) => {
         },
       },
     });
-    // Créer un nouvel objet player contenant l'objet track
-    // const playerWithTrack: User & { player: Player & { track: Track } } = {
-    //   ...user,
-    //   player: { ...player, track: track },
-    // };
+
     const userPlayerTrack = createUserPlayerTrack(user, player, track)
     res?.socket?.server?.io?.emit("world", userPlayerTrack);
 
-    res.status(200).json(user);
+    res.status(200).json(userPlayerTrack);
   } catch (err) {
     console.log(err);
 

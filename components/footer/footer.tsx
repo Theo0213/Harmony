@@ -26,6 +26,7 @@ const Footer = ({ track, token }: { track: Track; token: Token }) => {
         );
       }
     };
+    // ne pas save si pas de loc
     if (track?.songId) upsertPlayer();
   }, [player, track]);
 

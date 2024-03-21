@@ -15,11 +15,14 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         accounts: true,
       },
     });
-    
-    res.status(200).json(user?.accounts[0]);
+
+    if(user?.accounts[0]?.id){
+      res.status(200).json(user?.accounts[0]);
+    }else{
+      res.status(210).json({ message: "Aucun compte trouvé" });
+    }   
   } catch (err) {
     console.log(err);
-
     res.status(400).json({ message: "Something went wrong" });
   }
 };

@@ -6,7 +6,9 @@ import { selectUsers } from "@utils";
 import { useMainStore } from "../../src/store/store";
 import { useSocket } from "@components/providers/socket-provider";
 
-const MapComponent = dynamic(() => import("@components/map/map"), { ssr: false });
+const MapComponent = dynamic(() => import("@components/map/map"), {
+  ssr: false,
+});
 
 const Map = () => {
   const { socket } = useSocket();
@@ -19,22 +21,25 @@ const Map = () => {
     const handleWorldUpdate = (...args: UserPlayerTrack[]) => {
       if (users && args) {
         // Créer un nouveau tableau avec la référence modifiée
-        const updatedUsers = users.map((user) => {
+        let listeSocketUser = [...args];
+        const listUsers = users.map((user) => {
           const updatedUser = args.find(
             (updatedElement) => updatedElement.id === user.id
           );
-
           if (updatedUser) {
+            const indexRemove = listeSocketUser.indexOf(updatedUser);
+            listeSocketUser.splice(indexRemove, 1);
             return updatedUser;
           } else {
             return user;
           }
         });
-
-        // todo
-        // add new user to users si updatedElement.id not in users.id
-
-        setUsers(updatedUsers);
+        if (listeSocketUser.length > 0) {
+          listeSocketUser.map((newUser) => {
+            if (newUser.id != user.id) listUsers.push(newUser);
+          });
+        }
+        setUsers(listUsers);
       }
     };
 
@@ -59,5 +64,5 @@ const Map = () => {
   }, []);
 
   return <MapComponent users={users} />;
-}
+};
 export default Map;

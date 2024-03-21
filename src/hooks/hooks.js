@@ -154,8 +154,6 @@ export async function callCurrentTrack(token, setTrack, setPlayer, setToken) {
       // unothaurized --> expired
       if (error.status === 401 || error.status === 400) {
         setToken({ tokenId: token.tokenId, expired: true });
-      } else {
-        console.log(error);
       }
     });
 }
