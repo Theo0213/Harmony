@@ -1,7 +1,7 @@
-import type { NextApiRequest, NextApiResponse } from "next";
 import { NextApiResponseServerIo, createUserPlayerTrack } from "@types";
 import { Player, Track, User } from "@prisma/client";
 
+import type { NextApiRequest } from "next";
 import { prisma } from "../../src/lib/prisma";
 
 export default async (req: NextApiRequest, res: NextApiResponseServerIo) => {

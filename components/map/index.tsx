@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 import { UserPlayerTrack } from "@types";
 import dynamic from "next/dynamic";
@@ -19,7 +19,7 @@ const Map = () => {
     if (!socket) return;
 
     const handleWorldUpdate = (...args: UserPlayerTrack[]) => {
-      if (users && args) {
+      if (users && users.length > 0 && args) {
         // Créer un nouveau tableau avec la référence modifiée
         let listeSocketUser = [...args];
         const listUsers = users.map((user) => {
@@ -49,17 +49,17 @@ const Map = () => {
     };
   }, [socket, users]);
 
-  useEffect(() => {
-    const getUsers = async () => {
-      try {
-        if (user?.id) {
-          const userList = await selectUsers(user);
-          setUsers(userList);
-        }
-      } catch (error) {
-        console.error("Erreur lors du select de l'utilisateur : ", error);
+  const getUsers = async () => {
+    try {
+      if (user?.id) {
+        await selectUsers(user).then((retour) => setUsers(retour))
       }
-    };
+    } catch (error) {
+      console.error("Erreur lors du select de l'utilisateur : ", error);
+    }
+  }
+
+  useEffect(() => {
     getUsers();
   }, []);
 
