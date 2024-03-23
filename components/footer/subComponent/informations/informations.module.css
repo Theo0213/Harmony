@@ -8,6 +8,15 @@
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
   font-family: helvetica, arial, Hiragino Kaku Gothic Pro, Meiryo, MS Gothic;
+
+  @media only screen and (max-width: 810px) {
+    width: 100%;
+    background-color: black;
+    height: 35%;
+    min-height: 70px;
+    padding-top: 10px;
+    padding-inline-start: 8px;
+  };  
 }
 
 .image {
@@ -17,6 +26,10 @@
   margin-inline-end: 16px;
   border-radius: 4px;
   overflow: hidden;
+  @media only screen and (max-width: 810px) {
+    width: 60px;
+    height: 60px;
+  };
 }
 
 .name {

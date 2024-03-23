@@ -1,9 +1,9 @@
 .mapContainer {
   width: 100%;
-  height: -moz-calc(100% - 88px); /* Firefox */
-  height: -webkit-calc(100% - 88px); /* Chrome, Safari */
-  height: calc(100% - 88px); /* IE9+ and future browsers */
-  /* FOOTER : 88  */
+  height: 88%;
+  @media only screen and (max-width: 810px) {
+    height: 75%;
+  }
 }
 
 .borderIcon {
@@ -12,6 +12,7 @@
 }
 
 .popUpWrapper {
-    background: #00ff1a;
-    margin-top: -245px;
+  background: #00ff1a;
+  margin-top: -249px;
+  margin-bottom: -40px;
 }

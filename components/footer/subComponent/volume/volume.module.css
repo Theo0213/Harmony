@@ -1,12 +1,14 @@
 .volume {
   display: flex;
   justify-content: flex-end;
-  min-width: 180px;
+  padding-right: 6px;
+  min-width: 50px;
   width: 30%;
   align-items: center;
-  
+  @media only screen and (max-width: 810px) {
+    display: none;
+  };  
 }
-
 
 .input {
   -webkit-appearance: none;
@@ -73,4 +75,54 @@
 }
 .input:hover::-moz-range-progress {
   background-color: #4caf50; /* Couleur de la barre de progression, ajustez si nécessaire */
+}
+
+
+/* Indicateur Socket */
+
+.greenLed {
+  width: 2vh;
+  height: 2vh;
+  background-color: #ABFF00;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 0px 7px 1px, inset #304701 0 0px 9px, #89FF00 0 0px 12px;
+}
+
+.yellowLed {
+  width: 24px;
+  height: 24px;
+  background-color: #FF0;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #808002 0 -1px 9px, #FF0 0 2px 12px;
+  -webkit-animation: blinkYellow 1s infinite;
+  -moz-animation: blinkYellow 1s infinite;
+  -ms-animation: blinkYellow 1s infinite;
+  -o-animation: blinkYellow 1s infinite;
+  animation: blinkYellow 1s infinite;
+}
+
+@-webkit-keyframes blinkYellow {
+  from { background-color: #FF0; }
+  50% { background-color: #AA0; box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #808002 0 -1px 9px, #FF0 0 2px 0; }
+  to { background-color: #FF0; }
+}
+@-moz-keyframes blinkYellow {
+  from { background-color: #FF0; }
+  50% { background-color: #AA0; box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #808002 0 -1px 9px, #FF0 0 2px 0; }
+  to { background-color: #FF0; }
+}
+@-ms-keyframes blinkYellow {
+  from { background-color: #FF0; }
+  50% { background-color: #AA0; box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #808002 0 -1px 9px, #FF0 0 2px 0; }
+  to { background-color: #FF0; }
+}
+@-o-keyframes blinkYellow {
+  from { background-color: #FF0; }
+  50% { background-color: #AA0; box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #808002 0 -1px 9px, #FF0 0 2px 0; }
+  to { background-color: #FF0; }
+}
+@keyframes blinkYellow {
+  from { background-color: #FF0; }
+  50% { background-color: #AA0; box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #808002 0 -1px 9px, #FF0 0 2px 0; }
+  to { background-color: #FF0; }
 }

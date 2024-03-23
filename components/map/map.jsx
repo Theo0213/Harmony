@@ -13,7 +13,7 @@ import style from "./map.module.css";
 import { updateUser } from "@utils";
 import { useMainStore } from "../../src/store/store";
 
-const MapComponent = ({ users } ) => {
+const MapComponent = ({ users }) => {
   const [stateUsers, setUsers] = useState(users);
   const track = useMainStore((state) => state.track);
   const { imageURL } = track;
@@ -28,7 +28,8 @@ const MapComponent = ({ users } ) => {
 
   const saveUser = async (userId, latitude, longitude) => {
     try {
-      await updateUser(userId, latitude, longitude);
+      if ((userId, latitude, longitude))
+        await updateUser(userId, latitude, longitude);
     } catch (error) {
       console.error("Erreur lors de la mise à jour de l'utilisateur : ", error);
     }
@@ -44,13 +45,14 @@ const MapComponent = ({ users } ) => {
           latitude: latitude,
           longitude: longitude,
         });
-        if (user?.id && latitude && longitude) saveUser(user.id, latitude, longitude);
+        if (user?.id && latitude && longitude)
+          saveUser(user.id, latitude, longitude);
       });
     }
   }, []);
 
   useEffect(() => {
-    setUsers(users)
+    setUsers(users);
   }, [users]);
 
   const iconGen = (url) => {
@@ -71,14 +73,14 @@ const MapComponent = ({ users } ) => {
         zoom={13}
         className={style.mapContainer}
         maxBounds={[
-          [-(85), -180], // Limite inférieure (sud-ouest)
-          [85, 180],     // Limite supérieure (nord-est)
+          [-85, -180], // Limite inférieure (sud-ouest)
+          [85, 180], // Limite supérieure (nord-est)
         ]}
       >
         <TileLayer
-          attribution='<a href="http://jawg.io" title="Tiles Courtesy of Jawg Maps" target="_blank">&copy; <b>Jawg</b>Maps</a>| &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+          // attribution='<a href="http://jawg.io" title="Tiles Courtesy of Jawg Maps" target="_blank">&copy; <b>Jawg</b>Maps</a>| &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
           url="https://{s}.tile.jawg.io/jawg-matrix/{z}/{x}/{y}.png?access-token={accessToken}"
-          minZoom= {3}
+          minZoom={3}
           maxZoom={18}
           accessToken="nw1ZpuvpRBIV7xHKRS1bxzUN5NJnBHvQwCpxwO71aQ6IODcqQOComaPpJlO83mMH"
         />

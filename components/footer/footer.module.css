@@ -7,6 +7,13 @@
   background-color: #000;
   bottom: 0px;
   position: fixed;
-  height: 88px;
+  height: 12%;
   padding: 8px;
+  @media only screen and (max-width: 810px) {
+    flex-direction: column;
+    height: 25%;
+    background-color: transparent;
+    padding: 0px;
+    min-height: 150px;
+  };
 }
